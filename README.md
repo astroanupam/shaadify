@@ -6,16 +6,19 @@ Conceptualize & Developed by Anoopam Shukla with SriSales.
 
 Shaadify manages a Hindu wedding from the first conversation to the last thank-you: events and rituals (with regional traditions), guests and RSVP, invitations, food and catering, shopping, inventory, gifts, vendors, budget and accounts, travel, venue and decor, wedding-day control room, emergency plans, post-wedding closure, documents, photography, a digital archive and an on-device wedding assistant. English, Hindi and Gujarati labels; light and dark themes.
 
-This repository is the **website version**. It is a static site: no server, no build step.
+This is the **website version**. It is a static site: no server, no build step, **no folders**. All 11 files sit side by side.
 
-## Put it online with GitHub Pages
+## Put it online
 
-1. Create a new repository on GitHub (any name, for example `shaadify`).
-2. Upload **all 11 files in this folder** (drag them in, including the `assets` folder). Keep the folder structure.
-3. In the repository go to **Settings → Pages**, choose **Deploy from a branch**, branch **main**, folder **/ (root)**, and Save.
-4. After a minute your app is at `https://<your-username>.github.io/<repository>/`.
+Upload **all 11 files** into the same folder of your website or repository:
 
-Files: `index.html`, `404.html`, `.nojekyll`, `manifest.webmanifest`, `sw.js`, `header.png`, `icon-192.png`, `icon-512.png`, `README.md`, and `assets/` with one script and one stylesheet.
+`index.html`, `index-mvcCgxgH.js`, `index-B48Reye6.css`, `sw.js`, `manifest.webmanifest`, `header.png`, `icon-192.png`, `icon-512.png`, `404.html`, `.nojekyll`, `README.md`
+
+**GitHub Pages:** create a repository, open *Add file → Upload files*, select all 11 files in this folder (Ctrl+A) and drop them in, then Commit. In *Settings → Pages* choose *Deploy from a branch*, branch *main*, folder */ (root)*. Your app appears at `https://<username>.github.io/<repository>/`.
+
+**Any web host:** put the 11 files in one folder, for example `public_html/shaadify/`. The app works from any folder because it uses relative paths.
+
+Check: `index-mvcCgxgH.js` and `index-B48Reye6.css` must open in the browser at the same address as `index.html`. If they show "not found", the page will stay blank.
 
 ## Using it
 
@@ -27,4 +30,4 @@ Files: `index.html`, `404.html`, `.nojekyll`, `manifest.webmanifest`, `sw.js`, `
 
 ## Privacy
 
-The site is hosted on GitHub, but wedding data never leaves your browser unless you configure sync. The page loads no analytics, ads or third-party scripts.
+Wedding data never leaves your browser unless you configure sync. The page loads no analytics, ads or third-party scripts.

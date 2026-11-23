@@ -1,13 +1,13 @@
 /* Shaadify service worker: lets the web app open offline once it has been loaded. Only same-origin files are cached; sync traffic
    to your sync server and everything else is left alone. Bump VERSION to force an update. */
-const VERSION = 'shaadify-v1.3.0';
+const VERSION = 'shaadify-v1.3.1';
 const CORE = ['./', './index.html', './manifest.webmanifest', './header.png', './icon-192.png', './icon-512.png'];
 
 // On install, also save the app's own script and stylesheet (their file names change with every build, so read them from index.html).
 async function precache() {
   const c = await caches.open(VERSION); await c.addAll(CORE);
   const html = await (await fetch('./index.html', { cache: 'no-store' })).text();
-  const assets = [...html.matchAll(/(?:src|href)="(\.?\/?assets\/[^"]+)"/g)].map(m => m[1].replace(/^\//, './'));
+  const assets = [...html.matchAll(/(?:src|href)="(\.\/[^"]+\.(?:js|css))"/g)].map(m => m[1].replace(/^\//, './'));
   await c.addAll(assets);
 }
 self.addEventListener('install', e => { e.waitUntil(precache().then(() => self.skipWaiting())); });
